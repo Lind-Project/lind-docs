@@ -6,14 +6,12 @@ secure and efficient manner than exists with Linux, containers, OSVMs, etc.
 today.  To do this Lind uses three main technologies to implement [cages](#lind-nacl), [a microvisor](#rustposix),and [3i](#3i).
 
 Please navigate to the respective directories for more detailed information
-about each project.
+about each technology.
 
 ## Lind-NaCl 
 (Current Cage Technology)
 
-The documentation for `Lind with NaCl` can be found in the `docs/lind-nacl` directory. 
-
-[View Lind Documentation](docs/Lind-NaCl/Home.md)
+The documentation for `Lind with NaCl` can be found in the [`docs/lind-nacl` directory](docs/Lind-NaCl/Home.md).
 
 Lind introduces the  abstraction of a cage, which is an isolated execution 
 component (analogous to a process) which can safely run within the same 
@@ -43,21 +41,21 @@ overhead more similar to a function call.
 ## RustPosix 
 (Current Microvisor Implementation)
 
-The documentation for the `RustPOSIX` can be found in the `docs/rustposix` directory.
+The documentation for `RustPOSIX` can be found in the [`docs/rustposix` directory](docs/RustPOSIX/Home.md).
 
-[View RustPosix Documentation](docs/RustPOSIX/Home.md)
+There is also an obsolete microvisor called [SafePOSIX](https://github.com/Lind-Project/nacl_repy), which was created using the [RepyV2](https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2Tutorial.md) sandbox.
 
-However, there must be a way to fork cages, read and write files,
+There must be a way to fork cages, read and write files,
 communicate over the network, etc.  This is done by communicating with a
 piece of software in the process called a microvisor.  A microvisor is
 effectively similar to an operating system which lives in the same process
-with all of the caged processes and which provides a POSIX interface.  Code
-running within a cage believes it has its own virtual machine (much in the
+with all of the cages and which provides a POSIX interface.  Code
+running within a cage believes it has its own operating system (much in the
 same way a container does) because the abstraction it is provided appears
 to be a full operating system.  A cage can fork and exec other cages,
 manipulate files on disk or access the network, etc., all using standard
-off-the-shelf legacy programs (except for recompilation for some cage
-environments).
+off-the-shelf legacy programs (except for recompilation required by some 
+cage environments).
 
 ### Table of Contents
 
@@ -70,8 +68,6 @@ environments).
 * [Testing and Debugging](./docs/RustPOSIX/Testing-and-Debugging.md)
 
 ## 3i
-
-More to come!
 
 In order to make cages interact and work well together, another key concept
 is that of the iPC (intra-process call) interposable interface (3i).  Using
@@ -86,3 +82,4 @@ switching time here provides the ability to realize a number of security,
 utility and performance benefits which otherwise would be too expensive to
 provide.  
 
+More to come on 3i!
