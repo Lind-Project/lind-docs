@@ -1,10 +1,50 @@
 # Lind Project Documentation
 
-This repository contains the documentation for the Lind Project.
+This repository contains the documentation for the Lind Project.  Lind lets
+many different legacy programs run in the same address space in a much more
+secure and efficient manner than exists with Linux, containers, OSVMs, etc.
+today.  To do this Lind uses three main technologies:
 
-Please navigate to the respective directories for more detailed information about each project.
+Lind introduces the  abstraction of a cage, which is an isolated execution 
+component (analogous to a process) which can safely run within the same 
+OS process / address space as other software.  A cage is a lightweight
+abstraction which is both failure and memory isolated from other cages in
+the same address space, while having a potentially uniquely tailored and
+restricted interface to the operating system.  As such, each `cage’ is
+provided similar memory and OS isolation as is obtained with a separate
+OSVM communicating via RPC, but which can interact with other cages with an
+overhead more similar to a function call.
 
-## RustPosix
+However, there must be a way to fork cages, read and write files,
+communicate over the network, etc.  This is done by communicating with a
+piece of software in the process called a microvisor.  A microvisor is
+effectively similar to an operating system which lives in the same process
+with all of the caged processes and which provides a POSIX interface.  Code
+running within a cage believes it has its own virtual machine (much in the
+same way a container does) because the abstraction it is provided appears
+to be a full operating system.  A cage can fork and exec other cages,
+manipulate files on disk or access the network, etc., all using standard
+off-the-shelf legacy programs (except for recompilation for some cage
+environments).
+
+In order to make cages interact and work well together, another key concept
+is that of the iPC (intra-process call) interposable interface (3i).  Using
+3i provides a means for cages to securely and efficiently communicate with
+each other.  Importantly, data is copied between cages in necessary cases,
+providing meaningful isolation between cages, while having a speed similar
+to a function call.  3i is used to provide POSIX interfaces between cages,
+with a cage having the ability to interpose, modify, and mutate the
+behavior of a 3i interface.  This enables fine grained security and access
+control without breaking program behavior in unneeded cases.  The fast
+switching time here provides the ability to realize a number of security,
+utility and performance benefits which otherwise would be too expensive to
+provide.  
+
+
+Please navigate to the respective directories for more detailed information
+about each project.
+
+## RustPosix (current microvisor implementation)
 
 The documentation for the `RustPOSIX` can be found in the `docs/rustposix` directory.
 
@@ -20,7 +60,7 @@ The documentation for the `RustPOSIX` can be found in the `docs/rustposix` direc
 * [Style Guide](./docs/RustPOSIX/Style-Guide.md)
 * [Testing and Debugging](./docs/RustPOSIX/Testing-and-Debugging.md)
 
-## Lind-NaCl
+## Lind-NaCl (current cage technology)
 
 The documentation for `Lind with NaCl` can be found in the `docs/lind-nacl` directory. 
 
