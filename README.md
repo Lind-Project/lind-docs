@@ -25,7 +25,7 @@ provided similar memory and OS isolation as is obtained with a separate
 OSVM communicating via RPC, but which can interact with other cages with an
 overhead more similar to a function call.
 
-### content
+### Table of Contents
 
 * [Home](./docs/Lind-NaCl/Home.md)
 * [Lind Architectural Description](./docs/Lind-NaCl/Lind-Architectural-Description.md)
@@ -59,7 +59,7 @@ manipulate files on disk or access the network, etc., all using standard
 off-the-shelf legacy programs (except for recompilation for some cage
 environments).
 
-### Contents
+### Table of Contents
 
 * [Home](./docs/RustPOSIX/Home.md)
 * [Architecture](./docs/RustPOSIX/Architecture.md)
