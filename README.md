@@ -3,40 +3,13 @@
 This repository contains the documentation for the Lind Project.  Lind lets
 many different legacy programs run in the same address space in a much more
 secure and efficient manner than exists with Linux, containers, OSVMs, etc.
-today.  To do this Lind uses three main technologies to implement cages, a microvisor and 3i.
+today.  To do this Lind uses three main technologies to implement [cages](#lind-nacl), [a microvisor](#rustposix),and [3i](#3i).
 
 Please navigate to the respective directories for more detailed information
 about each project.
 
-## RustPosix (current microvisor implementation)
-
-The documentation for the `RustPOSIX` can be found in the `docs/rustposix` directory.
-
-[View RustPosix Documentation](docs/RustPOSIX/Home.md)
-
-However, there must be a way to fork cages, read and write files,
-communicate over the network, etc.  This is done by communicating with a
-piece of software in the process called a microvisor.  A microvisor is
-effectively similar to an operating system which lives in the same process
-with all of the caged processes and which provides a POSIX interface.  Code
-running within a cage believes it has its own virtual machine (much in the
-same way a container does) because the abstraction it is provided appears
-to be a full operating system.  A cage can fork and exec other cages,
-manipulate files on disk or access the network, etc., all using standard
-off-the-shelf legacy programs (except for recompilation for some cage
-environments).
-
-### Contents
-
-* [Home](./docs/RustPOSIX/Home.md)
-* [Architecture](./docs/RustPOSIX/Architecture.md)
-* [Interface](./docs/RustPOSIX/Interface.md)
-* [Run Independently](./docs/RustPOSIX/Run-Independently.md)
-* [Security Model](./docs/RustPOSIX/Security-Model.md)
-* [Style Guide](./docs/RustPOSIX/Style-Guide.md)
-* [Testing and Debugging](./docs/RustPOSIX/Testing-and-Debugging.md)
-
-## Lind-NaCl (current cage technology)
+## Lind-NaCl 
+(Current Cage Technology)
 
 The documentation for `Lind with NaCl` can be found in the `docs/lind-nacl` directory. 
 
@@ -67,6 +40,34 @@ overhead more similar to a function call.
 * [Running Applications](./docs/Lind-NaCl/Running-Applications.md)
 * [Running the Lind LAMP Stack Demo](./docs/Lind-NaCl/Running-the-Lind-LAMP-Stack-Demo.md)
 
+## RustPosix 
+(Current Microvisor Implementation)
+
+The documentation for the `RustPOSIX` can be found in the `docs/rustposix` directory.
+
+[View RustPosix Documentation](docs/RustPOSIX/Home.md)
+
+However, there must be a way to fork cages, read and write files,
+communicate over the network, etc.  This is done by communicating with a
+piece of software in the process called a microvisor.  A microvisor is
+effectively similar to an operating system which lives in the same process
+with all of the caged processes and which provides a POSIX interface.  Code
+running within a cage believes it has its own virtual machine (much in the
+same way a container does) because the abstraction it is provided appears
+to be a full operating system.  A cage can fork and exec other cages,
+manipulate files on disk or access the network, etc., all using standard
+off-the-shelf legacy programs (except for recompilation for some cage
+environments).
+
+### Contents
+
+* [Home](./docs/RustPOSIX/Home.md)
+* [Architecture](./docs/RustPOSIX/Architecture.md)
+* [Interface](./docs/RustPOSIX/Interface.md)
+* [Run Independently](./docs/RustPOSIX/Run-Independently.md)
+* [Security Model](./docs/RustPOSIX/Security-Model.md)
+* [Style Guide](./docs/RustPOSIX/Style-Guide.md)
+* [Testing and Debugging](./docs/RustPOSIX/Testing-and-Debugging.md)
 
 ## 3i
 
