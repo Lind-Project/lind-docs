@@ -1,6 +1,6 @@
 # RustPOSIX
 
-Welcome to RustPOSIX, a re-design of the original [RustPOSIX](https://github.com/Lind-Project/nacl_repy), which was created using [Repy](https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2Tutorial.md).
+Welcome to RustPOSIX, a re-design of the original (now obsolete) [SafePOSIX](https://github.com/Lind-Project/nacl_repy), which was created using [Repy](https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2Tutorial.md).
 
 [Source code](https://github.com/Lind-Project/safeposix-rust)
 
