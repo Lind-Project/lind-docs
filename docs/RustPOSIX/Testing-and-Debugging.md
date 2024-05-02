@@ -10,7 +10,11 @@ To run all the unit tests of syscalls, switch to the `safeposix-rust` directory 
 
 If you meet `net device couldn't find` error, run the script `gen_netdevs.sh` and repeat. 
 
+Use the Develop branch for the most up to date behavior, or Main for most stable.
+
 The RustPosix test suite majorly performs three kinds of tests
+
+BUG: There is a issue with how sockets are bound that requires waiting ~1 min between running tests for the kernel to let those addresses be bound to again. Either wait the required time or comment out networking_tests to avoid this error.
 
 1) #### File system tests
 
