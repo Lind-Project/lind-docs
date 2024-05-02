@@ -50,6 +50,8 @@ The documentation for the `RustPOSIX` can be found in the `docs/rustposix` direc
 
 [View RustPosix Documentation](docs/RustPOSIX/Home.md)
 
+There is also an obsolete microvisor called [SafePOSIX](https://github.com/Lind-Project/nacl_repy), which was created using the [RepyV2](https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2Tutorial.md) sandbox.
+
 ### Contents
 
 * [Home](./docs/RustPOSIX/Home.md)
