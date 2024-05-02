@@ -1,16 +1,18 @@
-### Testing and Debugging
+# Testing and Debugging
 
-To run all the unit tests of syscalls, simply witch to the `safeposix-rust` directory and run `cargo test --lib`. To skip some tests, you can comment out unwanted tests at `safeposix-rust/src/tests/mod.rs`.
+## Unit Tests
 
-To debug, you firstly run the cargo test. After it runs. at the top you of the output, you will see a path starting with `target/` and whatever else that follows. You copy that path, and then do `rr record (paste target path here)`. Then do `rr replay`, and set a breakpoint at one of these tests.
+It's useful to add [unit tests](https://doc.rust-lang.org/rust-by-example/testing/unit_testing.html) for helper functions that can be performed on their own.
 
-If meet `net device couldn't find` error, run the script `gen_netdevs.sh` then do the test again. 
+## Syscall Test Suite
 
-## Tests Overview
+To run all the unit tests of syscalls, switch to the `safeposix-rust` directory and run `cargo test --lib`. To skip some tests, you can comment out unwanted tests at `safeposix-rust/src/tests/mod.rs`.
+
+If you meet `net device couldn't find` error, run the script `gen_netdevs.sh` and repeat. 
 
 The RustPosix test suite majorly performs three kinds of tests
 
-1) # File system tests
+1) #### File system tests
 
     The `fs_tests.rs` file contains a test suite function `test_fs()`, which runs a series of tests related to file system operations. Here's a summary of the tests:
 
@@ -58,7 +60,7 @@ The RustPosix test suite majorly performs three kinds of tests
 
    22. `rdwrtest` and `prdwrtest`: These tests are will checking read
 
-2) # IPC tests
+2) ### IPC tests
 
     The `ipc_tests.rs` file contains three test functions: `ut_lind_ipc_pipe`, `ut_lind_ipc_domain_socket`, and `ut_lind_ipc_socketpair`. Here's a summary:
 
@@ -70,7 +72,7 @@ The RustPosix test suite majorly performs three kinds of tests
 
     These tests are designed to verify the correct operation of various IPC mechanisms in the Lind Rust environment. They check that data can be sent and received correctly, that system calls like `fork`, `pipe`, `bind`, `listen`, `accept`, `send`, and `recv` work as expected, and that the system correctly handles process termination.
 
-3) # Networking tests
+3) ### Networking tests
 
     The `networking_tests.rs` file contains a single function `net_tests()`, which will be a test suite that runs a series of tests related to networking operations. Here's a summary:
 
@@ -115,3 +117,9 @@ The RustPosix test suite majorly performs three kinds of tests
     20. `ut_lind_net_domain_socket`: This function will test the ability to create and use Unix domain sockets for inter-process communication.
 
     21. `ut_lind_net_epoll`: This function will test the `epoll` system call, which is a variant of `poll` that can be used to monitor multiple file descriptors to see if I/O is possible on any of them .
+
+    ### Using gdb/RR on the Test Suite
+
+    To debug, you should first run `cargo test --lib`. 
+    After it runs. at the top you of the output, you will see a path starting with `target/` and whatever else that follows. 
+    Copy that path, and then can use `rr record (paste target path here)` then `rr replay` or `gdb (target path)`.
