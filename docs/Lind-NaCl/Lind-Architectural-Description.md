@@ -5,7 +5,7 @@ This wiki serves to be an architectural map of how Lind functions internally. Th
 
 ## Overall Architecture
 
-![Architecture](https://github.com/Lind-Project/lind_project/blob/ccf457da0427bcb623a36f981b774222872492b0/docs/lind-arch.png)
+![Architecture](./assets/lind-arch.png)
 
 ## Cages
 
@@ -20,7 +20,7 @@ A cage is a representation of a traditional process inside of Lind. It includes 
 
 NaCl-GCC, the Native Client compiler, produces binaries with software fault isolation preventing applications from performing system calls or executing arbitrary instructions. 
 
-![Compilation Process](https://github.com/Lind-Project/lind_project/blob/ccf457da0427bcb623a36f981b774222872492b0/docs/rustposix-arch.jpg)
+![Compilation Process](./assets//rustposix-arch.jpg)
 
 **System Calls:**
 

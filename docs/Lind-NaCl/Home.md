@@ -64,7 +64,7 @@ One part of Lind is the library OS built with Rust. Though in the early stages o
 Calls within SafePOSIX are protected by Rust’s memory safety model. The Rust programming language is designed for safety while maintaining high-performance. It can also guarantee memory safety without garbage collection, which it achieves by using a borrow checker to validate references. This allows it to achieve the performance of languages without garbage collection, such as C/C++. Rust is especially valuable for safe concurrency.
 Rust is designed to be memory safe, and it does not permit null pointers, dangling pointers, or data races in safe code. It instead uses an Option type to determine if a value is Some or None. Rust also introduces added syntax to manage lifetimes, and the compiler reasons about these through its borrow checker. According to developers at Google, 70% of software bugs are memory safety issues. We are using Rust for the development of SafePOSIX to control those issues.
 
-![](https://raw.githubusercontent.com/Lind-Project/lind_project/wiki-updates/docs/lind-arch.png)
+![](./assets/lind-arch.png)
 
 Conceptional view of the Lind library OS.
 

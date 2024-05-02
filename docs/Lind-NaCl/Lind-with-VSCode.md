@@ -16,22 +16,22 @@ Then follow the instructions
 
 1. Open Extensions in VScode and find `Remote - SSH` 
 
-![Find SSH](https://github.com/Lind-Project/lind_project/blob/vscode-image/docs/VSCode-SSH.png)
+![Find SSH](./assets/VSCode-SSH.png)
 
 
 2. After installation, click the `Remote Explorer` button located at left toolbar, then click the plus sign (`Add New`) next to SSH target. 
 
-![Add Server](https://github.com/Lind-Project/lind_project/blob/vscode-image/docs/VSCode-AddSSH.png)
+![Add Server](./assets/VSCode-AddSSH.png)
 
 3. Then type `ssh [username]@lind-server.engineering.nyu.edu -A` and connect to the Lind server.
 
-![SSH Connect](https://github.com/Lind-Project/lind_project/blob/vscode-image/docs/VSCode-SSHConnect.png)
+![SSH Connect](./assets/VSCode-SSHConnect.png)
 
 # Step 3: Install Docker on VScode
 
 1. Open Extensions in VScode and find `Docker`
 
-![Find Docker](https://github.com/Lind-Project/lind_project/blob/vscode-image/docs/VSCode-Docker.png)
+![Find Docker](./assets/VSCode-Docker.png)
 
 # Step 4: Modify Lind source code in VScode
 
@@ -39,4 +39,4 @@ Then follow the instructions
 
 2. Find your container and start working
 
-![Open Container](https://github.com/Lind-Project/lind_project/blob/vscode-image/docs/VSCode-OpenContainer.png)
+![Open Container](./assets/VSCode-OpenContainer.png)

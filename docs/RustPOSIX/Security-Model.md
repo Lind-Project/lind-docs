@@ -2,7 +2,7 @@
 
 ## Interface + Popular Paths
 
-We define a narrow subset of Rust library calls that we deem necessary as our [interface](https://github.com/Lind-Project/safeposix-rust/wiki/Interface), which is further described in this wiki. We use this narrow subset so we an audit/fuzz the code that can reach the kernel, and determine that it adheres to the ["popular paths"](https://www.usenix.org/conference/atc17/technical-sessions/presentation/li-yiwen) philosophy.
+We define a narrow subset of Rust library calls that we deem necessary as our [interface](./Interface.md), which is further described in this wiki. We use this narrow subset so we an audit/fuzz the code that can reach the kernel, and determine that it adheres to the ["popular paths"](https://www.usenix.org/conference/atc17/technical-sessions/presentation/li-yiwen) philosophy.
 
 ## Memory Safety with Rust
 

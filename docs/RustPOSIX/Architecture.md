@@ -1,10 +1,10 @@
 # Architecture
 
-![SafePOSIX Diagram](https://github.com/Lind-Project/safeposix-rust/blob/main/docs/SafePOSIX%20Rust%20Diagram.jpg)
+![SafePOSIX Diagram](./assets/SafePOSIX%20Rust%20Diagram.jpg)
 
 ## Interface
 
-Detailed [here](https://github.com/Lind-Project/safeposix-rust/wiki/Interface), this is the set of imported libraries that we are allowing for use while creating SafePOSIX.
+Detailed [here](./Interface.md), this is the set of imported libraries that we are allowing for use while creating SafePOSIX.
 
 ## Dispatcher/RPC
 
