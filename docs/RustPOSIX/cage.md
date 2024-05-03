@@ -19,7 +19,7 @@ In the context of the Lind project, a "cage" refers to an isolated execution env
 ### Cage Objects and the Cage Table
 
 1. **Cage Objects**:
-   - In the RustPOSIX implementation, the cages are represented by "Cage Objects".
+   - In the RustPOSIX implementation of the microvisor,  per-cage state is stored in "Cage Objects".
    - These objects encapsulate the state and behavior associated with each isolated execution environment, including the file descriptor table, current working directory, and other metadata.
 
 2. **Cage Table**:
