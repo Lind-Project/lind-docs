@@ -9,7 +9,7 @@ In the context of the Lind project, a "cage" refers to an isolated execution env
    - This isolation helps prevent untrusted applications from accessing or modifying sensitive parts of the underlying system, ensuring the overall security and integrity of the system.
 
 2. **Resource Management**:
-   - Each cage has its own set of resources, such as a file descriptor table, current working directory, and other metadata.
+   - Each cage has its own set of resources, such as a file descriptor table, current working directory, and other metadata.  However, these structures are managed external to the cage itself (much like the Linux kernel manages them externally from a process)
    - This per-cage resource management allows the Lind system to allocate and control resources in a granular and efficient manner, without cross-contamination between different applications.
 
 3. **POSIX Interface**:
