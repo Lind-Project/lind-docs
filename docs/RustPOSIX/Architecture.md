@@ -39,9 +39,9 @@ The file descriptor table is a hash map of fd integers to our file descriptor re
 
 Each cage object has public methods corresponding to each system call. These calls are implemented either as filesystem related calls, system related calls, or network related calls in their respective files. 
 
-Each system call either returns a return code, or an error code (which is generated from [the errno Enum](https://github.com/Lind-Project/safeposix-rust/blob/main/src/safeposix/syscalls/errnos.rs)).
+Each system call either returns a return code, or an error code (which is generated from [the errno Enum](https://github.com/Lind-Project/safeposix-rust/blob/main/src/interface/errnos.rs)).
 
-The following are a breif description of the public methods
+The following are a brief description of the public methods
 - `get_next_fd` - get the next available fd number
 - `load_lower_handle_stubs` - initialize standard in/out/err descriptors
 - `insert_next_pipe` - given a pipe, insert it into the pipe table
