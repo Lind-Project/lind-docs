@@ -8,6 +8,9 @@ today.  To do this Lind uses three main technologies to implement [cages](#lind-
 Please navigate to the respective directories for more detailed information
 about each technology.
 
+If you want to build the overall Lind software, please go to the [main Lind repository](https://github.com/Lind-Project/lind_project)
+and follow the directions there.
+
 ## Lind-NaCl 
 (Current Cage Technology)
 
