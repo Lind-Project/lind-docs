@@ -1,4 +1,4 @@
-# Testing and Debugging
+# Testing, Benchmarks, and Debugging
 
 ## Unit Tests
 
@@ -127,3 +127,10 @@ BUG: There is a issue with how sockets are bound that requires waiting ~1 min be
     To debug, you should first run `cargo test --lib`. 
     After it runs. at the top you of the output, you will see a path starting with `target/` and whatever else that follows. 
     Copy that path, and then can use `rr record (paste target path here)` then `rr replay` or `gdb (target path)`.
+
+## Rust Benchmarks
+
+To run all of the benchmarks, run `cargo bench`.  If you want to run a specific test, try: `cargo bench TXnn` where TXnn is 
+the test number.
+
+For information about how to write a benchmark, see the [Style-Guide](https://github.com/Lind-Project/lind-docs/blob/main/docs/RustPOSIX/Style-Guide.md).
