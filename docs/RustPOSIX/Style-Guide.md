@@ -16,6 +16,80 @@ For this project, we adhere to the official Rust style guide to ensure consisten
 We particularly want to pay attention to documenting and handling anything labeled `unsafe`.
 
 
+### Writing Rustdoc Comments
+
+Rustdoc comments are used to generate documentation for your code. These comments start with /// for documenting items (modules, structs, enums, traits, functions, etc.), or //! for module-level documentation.
+
+#### Function Documentation Template
+
+~~~rust
+/// # Description
+/// Short description of what the function does.
+///
+/// # Arguments
+///
+/// * `arg1` - A description of the first argument.
+/// * `arg2` - A description of the second argument.
+///
+/// # Returns
+///
+/// A description of the return value.
+///
+/// # Examples
+///
+/// ```
+/// let result = my_function(arg1, arg2);
+/// assert_eq!(result, expected_value);
+/// ```
+///
+/// # Errors
+///
+/// A description of the conditions under which the function returns an error.
+pub fn my_function(arg1: Type1, arg2: Type2) -> Result<ReturnType, ErrorType> {
+    // Function implementation
+}
+~~~
+
+#### Struct and Enum Documentation Template
+
+~~~rust
+/// # Description
+/// A short description of the struct or enum.
+///
+/// # Fields
+///
+/// * `field1` - A description of the first field.
+/// * `field2` - A description of the second field.
+pub struct MyStruct {
+    pub field1: Type1,
+    pub field2: Type2,
+}
+
+pub enum MyEnum {
+    /// A description of the first variant.
+    Variant1,
+    /// A description of the second variant.
+    Variant2(Type),
+}
+~~~
+
+
+### Rustdoc Guidelines
+
+- Short Descriptions: Provide a concise and informative summary.
+- Arguments and Returns: Document all arguments and the return type. Specify types and purposes.
+- Examples: Include examples to illustrate usage. Use ```rust for code blocks.
+- Errors: Describe potential error conditions.
+- Panics: If the function can panic, describe the conditions under which it will do so.
+
+#### Documenting unsafe Code
+
+When documenting unsafe code, clearly explain:
+Why unsafe is needed.
+The invariants that must be upheld by the caller.
+Any potential risks and how they are mitigated.
+
+
 ## SSL
 
 SafePOSIX-Rust is a project under the maintenance of NYU Tandon's [Secure Systems Lab](https://ssl.engineering.nyu.edu/). The lab maintains [coding guidelines](https://github.com/secure-systems-lab/code-style-guidelines) for several languages. Though no official Rust guidelines currently exist, the guidelines for commenting as applied to Python also apply here. 
