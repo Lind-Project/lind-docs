@@ -81,6 +81,7 @@ pub enum MyEnum {
 - Examples: Include examples to illustrate usage. Use ```rust for code blocks.
 - Errors: Describe potential error conditions.
 - Panics: If the function can panic, describe the conditions under which it will do so.
+- Special characters: wrap special characters specially in function/struc/trait names in backquotes.
 
 #### Documenting unsafe Code
 
