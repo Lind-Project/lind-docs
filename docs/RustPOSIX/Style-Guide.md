@@ -35,7 +35,7 @@ Rustdoc comments are used to generate documentation for your code. These comment
 ///
 /// A description of the return value.
 ///
-/// # Examples
+/// # Examples (optional)
 ///
 /// ```
 /// let result = my_function(arg1, arg2);
@@ -45,6 +45,10 @@ Rustdoc comments are used to generate documentation for your code. These comment
 /// # Errors
 ///
 /// A description of the conditions under which the function returns an error.
+///
+/// # Panics
+///
+/// A description of the conditions under which the function will panic. 
 pub fn my_function(arg1: Type1, arg2: Type2) -> Result<ReturnType, ErrorType> {
     // Function implementation
 }
