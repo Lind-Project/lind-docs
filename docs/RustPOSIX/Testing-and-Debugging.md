@@ -1,5 +1,30 @@
 # Testing, Benchmarks, and Debugging
 
+## How to run Tests
+
+* To run the whole test suite 
+    ```
+    cargo test --lib
+    ```
+
+* To run a specific set of tests, we can tap into cargo's pattern matching feature
+    ```
+    cargo test tests::networking_tests::net_tests
+    ```
+    This runs all the tests in the networking suite
+
+* To run one specific test
+    ```
+    cargo test tests::fs_tests::fs_tests::ut_lind_fs_simple‎ -- --exact
+    ```
+    uses the pattern matching logic again but has to be an exact match.
+
+* To list all the tests we have in the test suite
+    ```
+    cargo test --list
+    ```
+
+
 ## Unit Tests
 
 It's useful to add [unit tests](https://doc.rust-lang.org/rust-by-example/testing/unit_testing.html) for helper functions that can be performed on their own.
